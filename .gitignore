@@ -1,0 +1,71 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# General use .gitignore for Minecraft modding.
+
+# Directories
+/.gradle/
+/build/
+/eclipse
+/run/
+/out/
+/asm/
+/bin/
+/build/
+/config/
+crash-reports/
+/.idea/
+/.metadata/
+/libs/
+/saves/
+/resourcepacks/
+/logs/
+/mods/
+/screenshots/
+
+# File Extensions
+*.psd
+*.iml
+*.ipr
+*.iws
+*.classpath
+*.project
+
+# Specific files
+Thumbs.db
+usernamecache.json
+options.txt
+MinecraftForge-License.txt
+MinecraftForge-Credits.txt
+Paulscode*
+README.txt
+LICENSE-fml.txt
+CREDITS-fml.txt
+*.launch
+usercache.json
+build.gradle
+forge.1.10.2-12.18.3.2185-changelog.txt
+*gradle*
+forge-1.10.2-12.18.3.2185-changelog.txt
+LICENSE-new.txt
+Setup_Workspace.bat
