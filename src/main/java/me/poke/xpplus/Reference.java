@@ -14,7 +14,10 @@ public class Reference {
 		BASIC_CRYSTAL("BasicXPCrystal", "basic_xp_crystal"),
 		ADVANCED_CRYSTAL("AdvancedXPCrystal", "advanced_xp_crystal"), 
 		HEALING_CARD("HealingCard", "healing_card"),
-		DAY_CARD("DayCard", "day_card");
+		DAY_CARD("DayCard", "day_card"),
+		NIGHT_CARD("NightCard", "night_card"),
+		CLEAR_CARD("ClearCard", "clear_card"),
+		RAIN_CARD("RainCard", "rain_card");
 		
 		private String unlocalizedName;
 		private String registryName;
