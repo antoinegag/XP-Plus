@@ -18,8 +18,7 @@ public class ItemBasicCrystal extends Item {
 	
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		tooltip.add("The basic item for XP augments");
+		tooltip.add("Let the Crystals drain power from your experience");
 	}
-	
 	
 }

@@ -7,6 +7,8 @@ import me.poke.xpplus.xpplus;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemAdvancedCrystal extends Item {
 	public ItemAdvancedCrystal() {
@@ -14,9 +16,10 @@ public class ItemAdvancedCrystal extends Item {
 		setRegistryName(Reference.xpplusitems.ADVANCED_CRYSTAL.getRegistryName());
 		setCreativeTab(xpplus.CREATIVE_TAB);
 	}
-	
-	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		tooltip.add("Used to craft advanced cards");
-	}
+		
+    @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack stack)
+    {
+        return true;
+    }
 }

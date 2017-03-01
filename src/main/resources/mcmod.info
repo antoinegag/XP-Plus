@@ -1,14 +1,13 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
+  "modid": "xpplus",
+  "name": "XP-Plus",
+  "description": "More use for your XP!",
+  "version": "1.0",
+  "mcversion": "1.10.2",
+  "url": "https://github.com/pokeba/",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Poke"],
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

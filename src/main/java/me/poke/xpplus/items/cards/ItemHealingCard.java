@@ -11,12 +11,15 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemHealingCard extends Item {
 	public ItemHealingCard() {
 		setUnlocalizedName(Reference.xpplusitems.HEALING_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.HEALING_CARD.getRegistryName());
 		setCreativeTab(xpplus.CREATIVE_TAB);
+		setMaxStackSize(1);
 	}
 	
 	@Override
@@ -33,6 +36,11 @@ public class ItemHealingCard extends Item {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		tooltip.add("Heal yourself for 5 levels");
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public boolean hasEffect(ItemStack stack) {
+		return true;
 	}
 	
 }

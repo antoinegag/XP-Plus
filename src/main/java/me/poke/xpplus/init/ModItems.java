@@ -6,8 +6,10 @@ import me.poke.xpplus.items.cards.ItemBasicCrystal;
 import me.poke.xpplus.items.cards.ItemClearCard;
 import me.poke.xpplus.items.cards.ItemDayCard;
 import me.poke.xpplus.items.cards.ItemHealingCard;
+import me.poke.xpplus.items.cards.ItemJumpCard;
 import me.poke.xpplus.items.cards.ItemNightCard;
 import me.poke.xpplus.items.cards.ItemRainCard;
+import me.poke.xpplus.items.cards.ItemSpeedCard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -16,7 +18,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
 	
-	public static Item BasicXPCrystal, AdvancedXPCrystal, HealingCard, DayCard, NightCard, ClearCard, RainCard;
+	public static Item BasicXPCrystal, AdvancedXPCrystal, HealingCard, DayCard, NightCard, ClearCard, RainCard, JumpCard, SpeedCard;
 	
 	public static void init(){
 		BasicXPCrystal = new ItemBasicCrystal();
@@ -26,6 +28,8 @@ public class ModItems {
 		NightCard = new ItemNightCard();
 		ClearCard = new ItemClearCard();
 		RainCard = new ItemRainCard();
+		JumpCard = new ItemJumpCard();
+		SpeedCard = new ItemSpeedCard();
 	}
 	
 	public static void register(){
@@ -36,6 +40,8 @@ public class ModItems {
 		GameRegistry.register(NightCard);
 		GameRegistry.register(ClearCard);
 		GameRegistry.register(RainCard);
+		GameRegistry.register(JumpCard);
+		GameRegistry.register(SpeedCard);
 	}
 	
 	public static void registerRenders(){
@@ -45,8 +51,9 @@ public class ModItems {
 		registerRender(DayCard);
 		registerRender(NightCard);
 		registerRender(ClearCard);
-		GameRegistry.register(RainCard);
-		
+		registerRender(RainCard);
+		registerRender(JumpCard);
+		registerRender(SpeedCard);
 	}
 	
 	private static void registerRender(Item item){

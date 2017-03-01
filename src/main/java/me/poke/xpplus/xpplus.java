@@ -1,8 +1,10 @@
 package me.poke.xpplus;
 
+import me.poke.xpplus.event.EventHandlerCommon;
 import me.poke.xpplus.init.ModCrafting;
 import me.poke.xpplus.init.ModItems;
 import me.poke.xpplus.proxy.CommonProxy;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -34,7 +36,7 @@ public class xpplus {
 	public void Init(FMLInitializationEvent event){
 		System.out.println("XP-Plus Inititialization...");
 		proxy.init();
-		
+		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
 		ModCrafting.register();
 
 	}

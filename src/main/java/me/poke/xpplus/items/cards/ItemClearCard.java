@@ -11,12 +11,15 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.WorldInfo;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemClearCard extends Item {
 	public ItemClearCard() {
 		setUnlocalizedName(Reference.xpplusitems.CLEAR_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.CLEAR_CARD.getRegistryName());
 		setCreativeTab(xpplus.CREATIVE_TAB);
+		setMaxStackSize(1);
 	}
 	
 	@Override
@@ -41,4 +44,11 @@ public class ItemClearCard extends Item {
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		tooltip.add("Clear the weather for 5 levels");
 	}
+
+   @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack stack)
+    {
+        return true;
+    }
 }
+

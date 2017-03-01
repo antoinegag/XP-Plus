@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemNightCard extends Item {
 	
@@ -17,6 +19,7 @@ public class ItemNightCard extends Item {
 		setUnlocalizedName(Reference.xpplusitems.NIGHT_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.NIGHT_CARD.getRegistryName());
 		setCreativeTab(xpplus.CREATIVE_TAB);
+		setMaxStackSize(1);
 	}
 	
 	@Override
@@ -34,4 +37,10 @@ public class ItemNightCard extends Item {
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		tooltip.add("Set the time to night for 10 levels");
 	}
+
+   @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack stack)
+    {
+        return true;
+    }
 }

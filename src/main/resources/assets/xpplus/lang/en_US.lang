@@ -1,12 +1,13 @@
 itemGroup.tabxpplus=XP-Plus
 
 
-item.BasicXPCrystal.name=Basic XP Crystal
-item.AdvancedXPCrystal.name=Advanced XP Crystal
-item.HealingCard.name=Healing Card
-item.DayCard.name=Card of Time: Day
-item.NightCard.name=Card of Time: Night
-item.ClearCard.name=Card of Weather: Clear
-item.RainCard.name= Card of Weather: Rain
+item.BasicXPCrystal.name=Basic XP Bridge
+item.AdvancedXPCrystal.name=Advanced XP Bridge
+item.HealingCard.name=Utility Crystal: Healing
+item.DayCard.name=Time Crystal: Day
+item.NightCard.name=Time Crystal: Night
+item.ClearCard.name=Weather Crystalr: Clear
+item.RainCard.name=Weather Crystal: Rain
+item.JumpCard.name=Utility Crystal: Jump
 
-
+item.activate.noXp=Not enough XP to activate!
