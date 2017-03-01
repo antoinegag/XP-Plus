@@ -6,8 +6,9 @@ item.AdvancedXPCrystal.name=Advanced XP Bridge
 item.HealingCard.name=Utility Crystal: Healing
 item.DayCard.name=Time Crystal: Day
 item.NightCard.name=Time Crystal: Night
-item.ClearCard.name=Weather Crystalr: Clear
+item.ClearCard.name=Weather Crystal: Clear
 item.RainCard.name=Weather Crystal: Rain
 item.JumpCard.name=Utility Crystal: Jump
+item.SpeedCard.name=Utility Crystal: Speed
 
 item.activate.noXp=Not enough XP to activate!

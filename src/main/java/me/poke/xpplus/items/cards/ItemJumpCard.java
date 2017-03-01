@@ -2,8 +2,6 @@ package me.poke.xpplus.items.cards;
 
 import java.util.List;
 
-import org.lwjgl.input.Keyboard;
-
 import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
 import net.minecraft.entity.player.EntityPlayer;
@@ -43,6 +41,7 @@ public class ItemJumpCard extends Item {
 						
 					}else{
 						itemData.setBoolean("activated", false);
+						playerIn.capabilities.setPlayerWalkSpeed(1);
 					}
 				}else{
 					setNewTagCompound(stack);
@@ -58,7 +57,7 @@ public class ItemJumpCard extends Item {
 		if(stack.hasTagCompound()){
 			boolean activated = stack.getTagCompound().getBoolean("activated");
 			if(activated){
-				tooltip.add("Activated - Jump 4 block high!");
+				tooltip.add("Activated - Jump 4 blocks high!");
 			}else{
 				tooltip.add("Activate for 30 levels (Shift-Right Click)");
 			}
