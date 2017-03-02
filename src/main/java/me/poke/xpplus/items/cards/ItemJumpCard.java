@@ -41,7 +41,6 @@ public class ItemJumpCard extends Item {
 						
 					}else{
 						itemData.setBoolean("activated", false);
-						playerIn.capabilities.setPlayerWalkSpeed(1);
 					}
 				}else{
 					setNewTagCompound(stack);
