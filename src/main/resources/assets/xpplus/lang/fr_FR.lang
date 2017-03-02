@@ -1,0 +1,14 @@
+itemGroup.tabxpplus=XP-Plus
+
+
+item.BasicXPCrystal.name=Pont d'XP basique
+item.AdvancedXPCrystal.name=Pont d'XP Avancé
+item.HealingCard.name=Cristal d'utilité: Soin
+item.DayCard.name=Cristal du temps: Jour
+item.NightCard.name=Cristal du temps: Nuit
+item.ClearCard.name=Cristal Météo: Dégagé
+item.RainCard.name=Cristal Météo: Pluie
+item.JumpCard.name=Cristal d'utilité: Saut
+item.SpeedCard.name=Cristal d'utilité: Vitesse
+
+item.activate.noXp=Pas asser d'expérience pour l'activation!
