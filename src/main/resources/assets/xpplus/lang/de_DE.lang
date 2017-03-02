@@ -1,5 +1,6 @@
-itemGroup.tabxpplus=XP-Plus
+#Thanks to ACGaming  for the translation
 
+itemGroup.tabxpplus=XP-Plus
 
 item.BasicXPCrystal.name=Einfache Erfahrungsbrücke
 item.AdvancedXPCrystal.name=Erweiterte Erfahrungsbrücke
