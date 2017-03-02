@@ -1,0 +1,14 @@
+itemGroup.tabxpplus=XP-Plus
+
+
+item.BasicXPCrystal.name=Einfache Erfahrungsbrücke
+item.AdvancedXPCrystal.name=Erweiterte Erfahrungsbrücke
+item.HealingCard.name=Nützlichkeitskristall: Heilung
+item.DayCard.name=Zeitkristall: Tag
+item.NightCard.name=Zeitkristall: Nacht
+item.ClearCard.name=Wetterkristall: Heiter
+item.RainCard.name=Wetterkristall: Regen
+item.JumpCard.name=Nützlichkeitskristall: Sprung
+item.SpeedCard.name=Nützlichkeitskristall: Geschwindigkeit
+
+item.activate.noXp=Nicht genug Erfahrung zur Aktivierung!
