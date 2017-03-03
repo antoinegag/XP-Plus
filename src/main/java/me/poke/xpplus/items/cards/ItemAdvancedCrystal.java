@@ -25,18 +25,5 @@ public class ItemAdvancedCrystal extends Item {
     {
         return true;
     }
-    
-    @Override 	//DEBUG ONLY
-    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
-    		EnumHand hand) {
-    	
-    	System.out.println("Player experience: " + playerIn.experience);
-    	System.out.println("Player level: " + playerIn.experienceLevel);
-    	System.out.println("Player totalexpericen: " + playerIn.experienceTotal );
-    	System.out.println("xp Bar Cap" + playerIn.xpBarCap());
-    	System.out.println("XP Seed: " + playerIn.getXPSeed());
-    	//playerIn.addExperience();
-   
-    	return super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
-    }
+  
 }

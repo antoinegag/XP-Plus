@@ -12,7 +12,7 @@ import net.minecraft.nbt.NBTTagEnd;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
-
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -54,5 +54,6 @@ public class EventHandlerCommon{
 			}
 		}
 	}
+
 }
 
