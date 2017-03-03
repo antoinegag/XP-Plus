@@ -86,12 +86,7 @@ public class ItemSpeedCard extends Item {
 		tag.setBoolean("activated", false);
 	}
 	
-	@Override
-	public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn) {
-		setNewTagCompound(stack);
-		addInformation(stack, playerIn, stack.getTooltip(playerIn, false), false);
-		super.onCreated(stack, worldIn, playerIn);
-	}
+
 	
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
@@ -101,5 +96,12 @@ public class ItemSpeedCard extends Item {
 			}
 		}
 		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
+	}
+
+	@Override
+	public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn) {
+		setNewTagCompound(stack);
+		addInformation(stack, playerIn, stack.getTooltip(playerIn, false), false);
+		super.onCreated(stack, worldIn, playerIn);
 	}
 }

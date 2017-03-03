@@ -19,8 +19,7 @@ public class Reference {
 		DAY_CARD("DayCard", "day_card"),
 		NIGHT_CARD("NightCard", "night_card"),
 		CLEAR_CARD("ClearCard", "clear_card"),
-		RAIN_CARD("RainCard", "rain_card"),
-		FLIGHT_CARD("FlightCard", "flight_card");
+		RAIN_CARD("RainCard", "rain_card");
 		
 		
 		private String unlocalizedName;
