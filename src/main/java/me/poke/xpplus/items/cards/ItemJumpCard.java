@@ -30,23 +30,18 @@ public class ItemJumpCard extends Item {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){
 				NBTTagCompound itemData = stack.getTagCompound();
-				if(stack.hasTagCompound()){
-					if(!itemData.getBoolean("activated")){
-						if(playerIn.experienceLevel >= 30){
+				if(!stack.hasTagCompound())
+					setNewTagCompound(stack);
+				if(!itemData.getBoolean("activated")){
+					if(playerIn.experienceLevel >= 30){
 						playerIn.removeExperienceLevel(30);
 						itemData.setBoolean("activated", true);
-						}else{
-							playerIn.addChatComponentMessage(new TextComponentTranslation("item.activate.noXp", new Object[0]));
-						}
-						
-					}else{
-						itemData.setBoolean("activated", false);
-					}
-				}else{
-					setNewTagCompound(stack);
-				}
-				addInformation(stack, playerIn, stack.getTooltip(playerIn, false), false);
-			}
+					}else
+						playerIn.addChatComponentMessage(new TextComponentTranslation("item.activate.noXp", new Object[0]));		
+				}else
+					itemData.setBoolean("activated", false);
+				addInformation(stack, playerIn, stack.getTooltip(playerIn, false), false); //Update the tooltip		
+			}	
 		}
 		return super.onItemRightClick(stack, worldIn, playerIn, hand);
 	}
@@ -77,6 +72,10 @@ public class ItemJumpCard extends Item {
 		}
 	}
 	
+	/**
+	 * Gives a new NBTTag compound to the item stack with activated to false
+	 * @param stack  an ItemStack
+	 */
 	public void setNewTagCompound(ItemStack stack){
 		NBTTagCompound tag = new NBTTagCompound();
 		stack.setTagCompound(tag);
