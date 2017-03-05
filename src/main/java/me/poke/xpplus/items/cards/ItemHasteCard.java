@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class ItemHasteCard extends Item {
+public class ItemHasteCard extends ToggleableItemBase {
 
 	public ItemHasteCard() {
 		setUnlocalizedName(Reference.xpplusitems.HASTE_CARD.getUnlocalizedName());

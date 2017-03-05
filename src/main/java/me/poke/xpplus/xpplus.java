@@ -1,7 +1,6 @@
 package me.poke.xpplus;
 
 import me.poke.xpplus.handlers.EventHandlerCommon;
-import me.poke.xpplus.handlers.ModGuiHandler;
 import me.poke.xpplus.init.ModCrafting;
 import me.poke.xpplus.init.ModItems;
 import me.poke.xpplus.proxy.CommonProxy;
@@ -38,7 +37,7 @@ public class xpplus {
 	public void Init(FMLInitializationEvent event){
 		System.out.println("XP-Plus Inititialization...");
 		proxy.init();
-		NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new ModGuiHandler());
+
 		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
 		ModCrafting.register();
 
