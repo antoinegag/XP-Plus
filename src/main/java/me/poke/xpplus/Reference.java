@@ -10,16 +10,23 @@ public class Reference {
 	public static final String SERVER_PROXY_CLASS = "me.poke.xpplus.proxy.ServerProxy";
 	
 	public static enum xpplusitems{
-		
+		//Bridges
 		BASIC_CRYSTAL("BasicXPCrystal", "basic_xp_crystal"), 
-		ADVANCED_CRYSTAL("AdvancedXPCrystal", "advanced_xp_crystal"), 
+		ADVANCED_CRYSTAL("AdvancedXPCrystal", "advanced_xp_crystal"),
+
+		//Cards
 		HEALING_CARD("HealingCard", "healing_card"),
-		JUMP_CARD("JumpCard", "jump_card"), //Cost XP to craft, free use after
-		SPEED_CARD("SpeedCard", "speed_card"), //Cost XP to craft, free use after
+		JUMP_CARD("JumpCard", "jump_card"),
+		SPEED_CARD("SpeedCard", "speed_card"),
 		DAY_CARD("DayCard", "day_card"),
 		NIGHT_CARD("NightCard", "night_card"),
 		CLEAR_CARD("ClearCard", "clear_card"),
-		RAIN_CARD("RainCard", "rain_card");
+		RAIN_CARD("RainCard", "rain_card"),
+		HASTE_CARD("HasteCard", "haste_card"),
+		RESISTANCE_CARD("ResistanceCard","resistance_card"),
+		STRENGTH_CARD("StrengthCard", "strength_card"),
+		//Card Holders
+		UTILITY_HOLDER("UtilityHolder","utility_holder" );
 		
 		
 		private String unlocalizedName;

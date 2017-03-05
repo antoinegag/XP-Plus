@@ -11,5 +11,7 @@ item.ClearCard.name=Wetterkristall: Heiter
 item.RainCard.name=Wetterkristall: Regen
 item.JumpCard.name=Nützlichkeitskristall: Sprung
 item.SpeedCard.name=Nützlichkeitskristall: Geschwindigkeit
+item.HasteCard.name=Nützlichkeitskristall: Eile
+item.ResistanceCard.name=Nützlichkeitskristall: Resistenz
 
 item.activate.noXp=Nicht genug Erfahrung zur Aktivierung!

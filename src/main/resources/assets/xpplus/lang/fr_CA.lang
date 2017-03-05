@@ -10,5 +10,7 @@ item.ClearCard.name=Cristal Météo: Dégagé
 item.RainCard.name=Cristal Météo: Pluie
 item.JumpCard.name=Cristal d'utilité: Saut
 item.SpeedCard.name=Cristal d'utilité: Vitesse
+item.HasteCard.name=Cristal d'utilité: Célérité
+item.ResistanceCard.name=Cristal d'utilité: Résistance
 
 item.activate.noXp=Pas asser d'expérience pour l'activation!

@@ -1,24 +1,14 @@
-package me.poke.xpplus.event;
+package me.poke.xpplus.handlers;
 
-import java.util.Iterator;
-
-import it.unimi.dsi.fastutil.Stack;
 import me.poke.xpplus.init.ModItems;
-import me.poke.xpplus.items.cards.ItemRainCard;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagEnd;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
-
 
 
 public class EventHandlerCommon{

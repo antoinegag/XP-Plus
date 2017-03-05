@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "xpplus:items/basic/healing_card"
+        "layer0": "xpplus:items/advanced/healing_card"
     }
 }
