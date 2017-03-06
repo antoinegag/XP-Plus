@@ -61,7 +61,6 @@ public class ItemStrengthCard extends Item {
 			}
 			hasEffect(stack); //Update enchant effet
 		}else{
-			setNewTagCompound(stack);
 			tooltip.add("Activate for 30 levels (Shift-Right Click)");
 		}
 	}
@@ -71,7 +70,6 @@ public class ItemStrengthCard extends Item {
 		if(stack.hasTagCompound())
 			return stack.getTagCompound().getBoolean("activated");
 		else{
-			setNewTagCompound(stack);
 			return false;
 		}
 	}
