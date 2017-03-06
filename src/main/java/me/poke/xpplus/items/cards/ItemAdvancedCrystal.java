@@ -12,19 +12,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemAdvancedCrystal extends ToggleableItemBase {
+public class ItemAdvancedCrystal extends Item {
 	public ItemAdvancedCrystal() {
 		setUnlocalizedName(Reference.xpplusitems.ADVANCED_CRYSTAL.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.ADVANCED_CRYSTAL.getRegistryName());
 		setCreativeTab(xpplus.CREATIVE_TAB);
 	}
-
-
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
-        if(!worldIn.isRemote)
-            if(playerIn.isSneaking())
-                toggleItem(30,itemStackIn,playerIn);
-        return super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
-    }
 }
