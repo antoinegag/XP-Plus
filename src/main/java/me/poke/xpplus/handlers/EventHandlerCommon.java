@@ -19,7 +19,7 @@ public class EventHandlerCommon{
 			EntityPlayer player = (EntityPlayer)e.getEntity(); //get the player
 			ItemStack stack = new ItemStack(ModItems.JumpCard);
 			stack.setTagCompound(new NBTTagCompound());
-			stack.getTagCompound().setBoolean("activated", true);
+			stack.getTagCompound().setBoolean("enabled", true);
 			if(player.inventory.hasItemStack(stack)){
 				if(player.inventory.getSlotFor(stack) != -1){
 					player.motionY *= 2;

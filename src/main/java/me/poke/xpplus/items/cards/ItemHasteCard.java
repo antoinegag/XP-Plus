@@ -4,19 +4,12 @@ import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.List;
 
 public class ItemHasteCard extends ToggleableItemBase {
 
@@ -25,9 +18,11 @@ public class ItemHasteCard extends ToggleableItemBase {
 		setRegistryName(Reference.xpplusitems.HASTE_CARD.getRegistryName());
 		setCreativeTab(xpplus.CREATIVE_TAB);
 		setMaxStackSize(1);
-		setTooltipMessage("Activated - Mine faster!");
 		setLevelCost(30);
 	}
+
+
+
 
 
 	@Override
@@ -44,7 +39,7 @@ public class ItemHasteCard extends ToggleableItemBase {
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if(entityIn instanceof EntityPlayer){
-			if(stack.getTagCompound().getBoolean("activated")){
+			if(stack.getTagCompound().getBoolean("enabled")){
 				((EntityPlayer)entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(3),100,1));
 			}
 		}

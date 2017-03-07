@@ -13,5 +13,8 @@ item.JumpCard.name=Nützlichkeitskristall: Sprung
 item.SpeedCard.name=Nützlichkeitskristall: Geschwindigkeit
 item.HasteCard.name=Nützlichkeitskristall: Eile
 item.ResistanceCard.name=Nützlichkeitskristall: Resistenz
+item.ThunderCard.name=Wetterkristall: Donner
+item.StrengthCard.name=Nützlichkeitskristall: Stärke
+
 
 item.activate.noXp=Nicht genug Erfahrung zur Aktivierung!

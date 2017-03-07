@@ -1,19 +1,12 @@
 package me.poke.xpplus.items.cards;
 
-import java.util.List;
-
 import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemJumpCard extends ToggleableItemBase {
 	
@@ -22,6 +15,7 @@ public class ItemJumpCard extends ToggleableItemBase {
 		setRegistryName(Reference.xpplusitems.JUMP_CARD.getRegistryName());
 		setCreativeTab(xpplus.CREATIVE_TAB);
 		setMaxStackSize(1);
+		setLevelCost(30);
 	}
 
 	@Override

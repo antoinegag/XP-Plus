@@ -11,5 +11,7 @@ item.JumpCard.name=Utility Crystal: Jump
 item.SpeedCard.name=Utility Crystal: Speed
 item.HasteCard.name=Utility Crystal: Haste
 item.ResistanceCard.name=Utility Crystal: Resistance
+item.StrengthCard.name=Utility Crystal: Strength
+item.ThunderCard.name=Weather Crystal: Thunder
 
 item.activate.noXp=Not enough XP to activate!

@@ -12,5 +12,7 @@ item.JumpCard.name=Cristal d'utilité: Saut
 item.SpeedCard.name=Cristal d'utilité: Vitesse
 item.HasteCard.name=Cristal d'utilité: Célérité
 item.ResistanceCard.name=Cristal d'utilité: Résistance
+item.StrengthCard.name=Cristal d'utilité: Force
+item.ThunderCard.name=Cristal Mété: Tonnerre
 
 item.activate.noXp=Pas asser d'expérience pour l'activation!

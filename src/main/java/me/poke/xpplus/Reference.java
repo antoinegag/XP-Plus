@@ -25,6 +25,7 @@ public class Reference {
 		HASTE_CARD("HasteCard", "haste_card"),
 		RESISTANCE_CARD("ResistanceCard","resistance_card"),
 		STRENGTH_CARD("StrengthCard", "strength_card"),
+		THUNDER_CARD("ThunderCard", "thunder_card"),
 		//Card Holders
 		UTILITY_HOLDER("UtilityHolder","utility_holder" );
 		

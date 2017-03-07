@@ -9,7 +9,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
 	
-	public static Item BasicXPCrystal, AdvancedXPCrystal, HealingCard, DayCard, NightCard, ClearCard, RainCard, JumpCard, SpeedCard, HasteCard, ResistanceCard, StrengthCard;
+	public static Item BasicXPCrystal, AdvancedXPCrystal, HealingCard, DayCard, NightCard, ClearCard,
+						RainCard, JumpCard, SpeedCard, HasteCard, ResistanceCard, StrengthCard, ThunderCard;
 	
 	public static void init(){
 		BasicXPCrystal = new ItemBasicCrystal();
@@ -24,6 +25,7 @@ public class ModItems {
 		HasteCard = new ItemHasteCard();
 		ResistanceCard = new ItemResistanceCard();
 		StrengthCard = new ItemStrengthCard();
+		ThunderCard = new ItemThunderCard();
 	}
 	
 	public static void register(){
@@ -39,6 +41,7 @@ public class ModItems {
 		GameRegistry.register(HasteCard);
 		GameRegistry.register(ResistanceCard);
 		GameRegistry.register(StrengthCard);
+		GameRegistry.register(ThunderCard);
 	}
 	
 	public static void registerRenders(){
@@ -54,6 +57,7 @@ public class ModItems {
 		registerRender(HasteCard);
 		registerRender(ResistanceCard);
 		registerRender(StrengthCard);
+		registerRender(ThunderCard);
 	}
 	
 	private static void registerRender(Item item){

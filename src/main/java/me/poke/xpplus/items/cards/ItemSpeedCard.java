@@ -1,22 +1,15 @@
 package me.poke.xpplus.items.cards;
 
-import java.util.List;
-
 import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemSpeedCard extends ToggleableItemBase {
 	
@@ -26,7 +19,6 @@ public class ItemSpeedCard extends ToggleableItemBase {
 		setCreativeTab(xpplus.CREATIVE_TAB);
 		setMaxStackSize(1);
 		setLevelCost(30);
-		setTooltipMessage("Activated - Run faster!");
 	}
 
 
@@ -45,7 +37,7 @@ public class ItemSpeedCard extends ToggleableItemBase {
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if(entityIn instanceof EntityPlayer){
-			if(stack.getTagCompound().getBoolean("activated")){
+			if(stack.getTagCompound().getBoolean("enabled")){
 				((EntityPlayer)entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(1),100,2));
 			}
 		}

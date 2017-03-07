@@ -1,7 +1,5 @@
 package me.poke.xpplus.items.cards;
 
-import java.util.List;
-
 import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,6 +11,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 public class ItemClearCard extends Item {
 	public ItemClearCard() {
