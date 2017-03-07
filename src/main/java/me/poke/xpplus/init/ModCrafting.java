@@ -25,7 +25,6 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.DayCard),  "IBI", "ICI", "IGI", 'I', Items.IRON_INGOT, 'C', ModItems.AdvancedXPCrystal, 'G', Blocks.GLOWSTONE, 'B', Items.BLAZE_POWDER);
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.NightCard), "IEI", "ICI","ISI", 'I', Items.IRON_INGOT, 'E', Items.ENDER_PEARL, 'S', Blocks.END_STONE, 'C', ModItems.AdvancedXPCrystal);
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ClearCard),  "IBI", "ICI", "IGI", 'I', Items.IRON_INGOT, 'C', ModItems.AdvancedXPCrystal, 'G', Blocks.GLOWSTONE, 'B', Blocks.YELLOW_FLOWER );
-
-
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ThunderCard),"IBI", "ICI","IGI", 'I', Items.IRON_INGOT, 'B', Blocks.GLOWSTONE, 'G', Items.WATER_BUCKET, 'C', ModItems.AdvancedXPCrystal);
 	}
 }
