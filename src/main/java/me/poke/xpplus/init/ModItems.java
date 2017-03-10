@@ -1,6 +1,7 @@
 package me.poke.xpplus.init;
 
 import me.poke.xpplus.items.cards.*;
+import me.poke.xpplus.items.holder.ItemUtilityHolder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -10,7 +11,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ModItems {
 	
 	public static Item BasicXPCrystal, AdvancedXPCrystal, HealingCard, DayCard, NightCard, ClearCard,
-						RainCard, JumpCard, SpeedCard, HasteCard, ResistanceCard, StrengthCard, ThunderCard;
+						RainCard, JumpCard, SpeedCard, HasteCard, ResistanceCard, StrengthCard, ThunderCard,
+						UtilityHolder;
+
 	
 	public static void init(){
 		BasicXPCrystal = new ItemBasicCrystal();
@@ -26,6 +29,7 @@ public class ModItems {
 		ResistanceCard = new ItemResistanceCard();
 		StrengthCard = new ItemStrengthCard();
 		ThunderCard = new ItemThunderCard();
+		UtilityHolder = new ItemUtilityHolder();
 	}
 	
 	public static void register(){
@@ -42,6 +46,7 @@ public class ModItems {
 		GameRegistry.register(ResistanceCard);
 		GameRegistry.register(StrengthCard);
 		GameRegistry.register(ThunderCard);
+		GameRegistry.register(UtilityHolder);
 	}
 	
 	public static void registerRenders(){
@@ -58,6 +63,7 @@ public class ModItems {
 		registerRender(ResistanceCard);
 		registerRender(StrengthCard);
 		registerRender(ThunderCard);
+		registerRender(UtilityHolder);
 	}
 	
 	private static void registerRender(Item item){
