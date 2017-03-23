@@ -4,10 +4,10 @@
   "name": "XP-Plus",
   "description": "More use for your XP!",
   "version": "1.01",
-  "mcversion": "1.10.2",
+  "mcversion": "1.11.2",
   "url": "https://github.com/pokeba/",
   "updateUrl": "",
-  "authorList": ["Poke"],
+  "authorList": ["Poke, LordCazsius"],
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

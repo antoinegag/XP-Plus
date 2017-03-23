@@ -13,20 +13,19 @@ public class ItemJumpCard extends ToggleableItemBase {
 	public ItemJumpCard() {
 		setUnlocalizedName(Reference.xpplusitems.JUMP_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.JUMP_CARD.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 		setMaxStackSize(1);
 		setLevelCost(30);
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn,
-													EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){
-				toggleItem(stack, playerIn);
+				toggleItem(ItemStack.EMPTY, playerIn);
 			}
 		}
-		return super.onItemRightClick(stack, worldIn, playerIn, hand);
+		return super.onItemRightClick(worldIn, playerIn, hand);
 	}
 
 }

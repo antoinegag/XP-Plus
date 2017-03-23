@@ -8,6 +8,6 @@ public class ItemAdvancedCrystal extends Item {
 	public ItemAdvancedCrystal() {
 		setUnlocalizedName(Reference.xpplusitems.ADVANCED_CRYSTAL.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.ADVANCED_CRYSTAL.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 	}
 }

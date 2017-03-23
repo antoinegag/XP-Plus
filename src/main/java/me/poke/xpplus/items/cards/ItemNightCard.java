@@ -18,19 +18,19 @@ public class ItemNightCard extends Item {
 	public ItemNightCard() {
 		setUnlocalizedName(Reference.xpplusitems.NIGHT_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.NIGHT_CARD.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 		setMaxStackSize(1);
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if(!worldIn.isRemote){
 			if (playerIn.experienceLevel >= 10 && worldIn.getWorldTime() < 13000) {
 				worldIn.setWorldTime(13000);
 				playerIn.removeExperienceLevel(10);
 			}
 		}
-		return super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
+		return super.onItemRightClick(worldIn, playerIn, hand);
 	}
 	
 	@Override

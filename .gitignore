@@ -7,7 +7,6 @@
 *.prefs
 *.launch
 /output
-*.txt
 
 #ForgeGradle
 /build

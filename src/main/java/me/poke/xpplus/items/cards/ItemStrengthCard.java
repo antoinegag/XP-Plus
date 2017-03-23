@@ -16,21 +16,21 @@ public class ItemStrengthCard extends ToggleableItemBase {
 	public ItemStrengthCard() {
 		setUnlocalizedName(Reference.xpplusitems.STRENGTH_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.STRENGTH_CARD.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 		setMaxStackSize(1);
 		setLevelCost(30);
 	}
 	
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn,
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
 			EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){
-					toggleItem(stack, playerIn);
+					toggleItem(ItemStack.EMPTY, playerIn);
 			}	
 		}
-		return super.onItemRightClick(stack, worldIn, playerIn, hand);
+		return super.onItemRightClick(worldIn, playerIn, hand);
 	}
 
 

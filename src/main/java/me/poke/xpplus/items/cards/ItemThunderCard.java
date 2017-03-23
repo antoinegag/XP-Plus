@@ -19,7 +19,7 @@ public class ItemThunderCard extends Item{
     public ItemThunderCard(){
         setUnlocalizedName(Reference.xpplusitems.THUNDER_CARD.getUnlocalizedName());
         setRegistryName(Reference.xpplusitems.THUNDER_CARD.getRegistryName());
-        setCreativeTab(xpplus.CREATIVE_TAB);
+        setCreativeTab(xpplus.XPPLUS_TAB);
         setMaxStackSize(1);
     }
 
@@ -29,7 +29,7 @@ public class ItemThunderCard extends Item{
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
                                                     EnumHand hand) {
         int time = 400 + itemRand.nextInt(1000) * 20;
         if (!worldIn.isRemote) {
@@ -43,7 +43,7 @@ public class ItemThunderCard extends Item{
                 playerIn.removeExperienceLevel(5);
             }
         }
-        return super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
+        return super.onItemRightClick(worldIn, playerIn, hand);
     }
 
     @SideOnly(Side.CLIENT)

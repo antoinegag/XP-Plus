@@ -37,7 +37,7 @@ public class EventHandlerCommon{
 			stack.getTagCompound().setBoolean("activated", true);
 			if(player.inventory.hasItemStack(stack)){ 
 				if(player.inventory.getSlotFor(stack) != -1){
-					if(e.getSource() == DamageSource.fall){
+					if(e.getSource() == DamageSource.FALL){
 						e.setCanceled(true);
 					}
 				}

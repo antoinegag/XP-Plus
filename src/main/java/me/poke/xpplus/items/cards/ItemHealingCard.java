@@ -17,19 +17,19 @@ public class ItemHealingCard extends Item {
 	public ItemHealingCard() {
 		setUnlocalizedName(Reference.xpplusitems.HEALING_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.HEALING_CARD.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 		setMaxStackSize(1);
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer player, EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer player, EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(player.experienceLevel >= 5 && player.getHealth() != player.getMaxHealth()){
 				player.heal(player.getMaxHealth());
 				player.removeExperienceLevel(5);
 			}
 		}
-		return super.onItemRightClick(itemStackIn, worldIn, player, hand);
+		return super.onItemRightClick(worldIn, player, hand);
 	}
 	
 	@Override

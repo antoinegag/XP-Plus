@@ -16,7 +16,7 @@ public class ItemHasteCard extends ToggleableItemBase {
 	public ItemHasteCard() {
 		setUnlocalizedName(Reference.xpplusitems.HASTE_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.HASTE_CARD.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 		setMaxStackSize(1);
 		setLevelCost(30);
 	}
@@ -26,14 +26,14 @@ public class ItemHasteCard extends ToggleableItemBase {
 
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn,
-													EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if(!worldIn.isRemote){
-			if(playerIn.isSneaking()){
-				toggleItem(stack, playerIn);
+			if(playerIn.isSneaking()){			
+				//TODO Fix ItemStack
+				toggleItem(ItemStack.EMPTY, playerIn);
 			}
 		}
-		return super.onItemRightClick(stack, worldIn, playerIn, hand);
+		return super.onItemRightClick(worldIn, playerIn, hand);
 	}
 	
 	@Override

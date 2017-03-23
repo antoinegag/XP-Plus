@@ -1,5 +1,7 @@
 package me.poke.xpplus.items.cards;
 
+import java.util.List;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -8,8 +10,6 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.List;
 
 public class ToggleableItemBase extends Item{
 
@@ -21,12 +21,12 @@ public class ToggleableItemBase extends Item{
         }
         NBTTagCompound itemData = stack.getTagCompound();
         if(!itemData.getBoolean("activated")){ //If it's not activated
-            if(playerIn.experienceLevel >= this.LevelCost || playerIn.isCreative()){
+            if(playerIn.experienceLevel >= ToggleableItemBase.LevelCost || playerIn.isCreative()){
                 if(!playerIn.isCreative())
-                    playerIn.removeExperienceLevel(this.LevelCost);
+                    playerIn.removeExperienceLevel(ToggleableItemBase.LevelCost);
                 itemData.setBoolean("activated", true);
             }else
-                playerIn.addChatComponentMessage(new TextComponentTranslation("item.activate.noXp", new Object[0]));
+                playerIn.sendMessage(new TextComponentTranslation("item.activate.noXp", new Object[0]));
         }else{
             itemData.setBoolean("enabled", !itemData.getBoolean("enabled")); //Invert
         }
@@ -60,7 +60,7 @@ public class ToggleableItemBase extends Item{
     }
 
     public void setLevelCost(int level){
-        this.LevelCost = level;
+        ToggleableItemBase.LevelCost = level;
     }
 
 
@@ -76,7 +76,7 @@ public class ToggleableItemBase extends Item{
                 tooltip.add("Activated - Shift Right-Click to enable effect");
             }
         }else{
-            tooltip.add("Activate for " + this.LevelCost + " levels (Shift-Right Click)");
+            tooltip.add("Activate for " + ToggleableItemBase.LevelCost + " levels (Shift-Right Click)");
         }
         hasEffect(stack); //Update enchant effet
     }

@@ -13,7 +13,7 @@ public class ItemBasicCrystal extends Item {
 	public ItemBasicCrystal() {
 		setUnlocalizedName(Reference.xpplusitems.BASIC_CRYSTAL.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.BASIC_CRYSTAL.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 	}
 	
 	@Override

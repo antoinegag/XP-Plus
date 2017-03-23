@@ -18,13 +18,12 @@ public class ItemClearCard extends Item {
 	public ItemClearCard() {
 		setUnlocalizedName(Reference.xpplusitems.CLEAR_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.CLEAR_CARD.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 		setMaxStackSize(1);
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
-			EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		int time = 400 + itemRand.nextInt(1000) * 20;
 		if (!worldIn.isRemote) {
 			if (playerIn.experienceLevel >= 5 && worldIn.getWorldInfo().isRaining()){
@@ -37,7 +36,7 @@ public class ItemClearCard extends Item {
 				playerIn.removeExperienceLevel(5);
 			}
 		}
-		return super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
+		return super.onItemRightClick(worldIn, playerIn, handIn);
 	}
 	
 	@Override

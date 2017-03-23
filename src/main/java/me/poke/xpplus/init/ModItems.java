@@ -1,10 +1,21 @@
 package me.poke.xpplus.init;
 
-import me.poke.xpplus.items.cards.*;
+import me.poke.xpplus.items.cards.ItemAdvancedCrystal;
+import me.poke.xpplus.items.cards.ItemBasicCrystal;
+import me.poke.xpplus.items.cards.ItemClearCard;
+import me.poke.xpplus.items.cards.ItemDayCard;
+import me.poke.xpplus.items.cards.ItemHasteCard;
+import me.poke.xpplus.items.cards.ItemHealingCard;
+import me.poke.xpplus.items.cards.ItemJumpCard;
+import me.poke.xpplus.items.cards.ItemNightCard;
+import me.poke.xpplus.items.cards.ItemRainCard;
+import me.poke.xpplus.items.cards.ItemResistanceCard;
+import me.poke.xpplus.items.cards.ItemSpeedCard;
+import me.poke.xpplus.items.cards.ItemStrengthCard;
+import me.poke.xpplus.items.cards.ItemThunderCard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {

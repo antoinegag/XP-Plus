@@ -18,19 +18,19 @@ public class ItemDayCard extends Item{
 	public ItemDayCard() {
 		setUnlocalizedName(Reference.xpplusitems.DAY_CARD.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.DAY_CARD.getRegistryName());
-		setCreativeTab(xpplus.CREATIVE_TAB);
+		setCreativeTab(xpplus.XPPLUS_TAB);
 		setMaxStackSize(1);
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(playerIn.experienceLevel >= 10 && worldIn.getWorldTime() > 13000){
 				worldIn.setWorldTime(0);
 				playerIn.removeExperienceLevel(10);
 			}		
 		}
-		return super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
+		return super.onItemRightClick(worldIn, playerIn, hand);
 	}
 	
 	@Override
