@@ -1,7 +1,8 @@
-package me.poke.xpplus.items.cards;
+	package me.poke.xpplus.items.cards;
 
 import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
+import me.poke.xpplus.init.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -30,7 +31,7 @@ public class ItemHasteCard extends ToggleableItemBase {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){			
 				//TODO Fix ItemStack
-				toggleItemnew ItemStack(ModItems.HasteCard), playerIn);
+				toggleItem(new ItemStack(ModItems.HasteCard), playerIn);
 			}
 		}
 		return super.onItemRightClick(worldIn, playerIn, hand);

@@ -2,6 +2,7 @@ package me.poke.xpplus.items.cards;
 
 import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
+import me.poke.xpplus.init.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
