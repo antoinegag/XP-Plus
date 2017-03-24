@@ -2,7 +2,6 @@ package me.poke.xpplus.items.cards;
 
 import me.poke.xpplus.Reference;
 import me.poke.xpplus.xpplus;
-import me.poke.xpplus.init.ModItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -23,7 +22,7 @@ public class ItemJumpCard extends ToggleableItemBase {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){
-				toggleItem(new ItemStack(ModItems.JumpCard), playerIn);
+				toggleItem(playerIn.getHeldItem(hand), playerIn);
 			}
 		}
 		return super.onItemRightClick(worldIn, playerIn, hand);
