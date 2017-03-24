@@ -27,7 +27,7 @@ public class ItemSpeedCard extends ToggleableItemBase {
 													EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){
-				toggleItem(ItemStack.EMPTY, playerIn);
+				toggleItem(new ItemStack(ModItems.SpeedCard), playerIn);
 			}
 		}
 		return super.onItemRightClick(worldIn, playerIn, hand);
