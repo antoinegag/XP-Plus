@@ -22,7 +22,7 @@ public class ItemJumpCard extends ToggleableItemBase {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){
-				toggleItem(ItemStack.EMPTY, playerIn);
+				toggleItem(new ItemStack(ModItems.JumpCard), playerIn);
 			}
 		}
 		return super.onItemRightClick(worldIn, playerIn, hand);
