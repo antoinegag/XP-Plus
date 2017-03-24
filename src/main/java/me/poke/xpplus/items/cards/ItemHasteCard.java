@@ -30,7 +30,7 @@ public class ItemHasteCard extends ToggleableItemBase {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){			
 				//TODO Fix ItemStack
-				toggleItem(ItemStack.EMPTY, playerIn);
+				toggleItemnew ItemStack(ModItems.HasteCard), playerIn);
 			}
 		}
 		return super.onItemRightClick(worldIn, playerIn, hand);
