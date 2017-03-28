@@ -39,6 +39,8 @@ public class ItemHasteCard extends ToggleableItemBase {
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if(entityIn instanceof EntityPlayer){
+			if(!stack.hasTagCompound())
+				setNewTagCompound(stack);
 			if(stack.getTagCompound().getBoolean("enabled")){
 				((EntityPlayer)entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(3),100,1));
 			}
