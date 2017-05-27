@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EventHandlerCommon{
 
+	//Need to optimize this...
 	@SubscribeEvent(priority= EventPriority.NORMAL)
 	public void onLivingEntityJump(LivingJumpEvent e){
 		if (e.getEntity() instanceof EntityPlayer) { //check if player
@@ -27,7 +28,8 @@ public class EventHandlerCommon{
 			}
 		}
 	}
-	
+
+	//Need to optimize this...
 	@SubscribeEvent
 	public void onLivingFallEvent(LivingHurtEvent e){
 		if (e.getEntity() instanceof EntityPlayer) { //check if player

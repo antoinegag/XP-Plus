@@ -27,7 +27,7 @@ public class ItemStrengthCard extends ToggleableItemBase {
 			EnumHand hand) {
 		if(!worldIn.isRemote){
 			if(playerIn.isSneaking()){
-					toggleItem(stack, playerIn);
+					toggleItem(stack, playerIn); //Attempts to toggle the item
 			}	
 		}
 		return super.onItemRightClick(stack, worldIn, playerIn, hand);

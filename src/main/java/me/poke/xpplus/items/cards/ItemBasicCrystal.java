@@ -9,7 +9,8 @@ import net.minecraft.item.ItemStack;
 import java.util.List;
 
 public class ItemBasicCrystal extends Item {
-	
+
+	//This is only a crafting item
 	public ItemBasicCrystal() {
 		setUnlocalizedName(Reference.xpplusitems.BASIC_CRYSTAL.getUnlocalizedName());
 		setRegistryName(Reference.xpplusitems.BASIC_CRYSTAL.getRegistryName());

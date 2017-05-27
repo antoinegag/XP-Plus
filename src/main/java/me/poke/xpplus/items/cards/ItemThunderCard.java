@@ -31,7 +31,7 @@ public class ItemThunderCard extends Item{
     @Override
     public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
                                                     EnumHand hand) {
-        int time = 400 + itemRand.nextInt(1000) * 20;
+        int time = 400 + itemRand.nextInt(1000) * 20; //Random time duration of the effect
         if (!worldIn.isRemote) {
             if (playerIn.experienceLevel >= 5 && !worldIn.getWorldInfo().isRaining()){
                 WorldInfo worldInfo = worldIn.getWorldInfo();

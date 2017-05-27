@@ -39,15 +39,19 @@ public class ToggleableItemBase extends Item{
      */
     public void setNewTagCompound(ItemStack stack){
         NBTTagCompound tag = new NBTTagCompound();
+        tag.setBoolean("activated", false);
+        tag.setBoolean("enabled", false);
         stack.setTagCompound(tag);
-        stack.getTagCompound().setBoolean("activated", false);
-        stack.getTagCompound().setBoolean("enabled", false);
     }
 
     @Override
     public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn) {
         setNewTagCompound(stack);
-        addInformation(stack, playerIn, stack.getTooltip(playerIn, false), false);
+        addInformation(
+                stack,
+                playerIn,
+                stack.getTooltip(playerIn,false),
+                false);
         super.onCreated(stack, worldIn, playerIn);
     }
 
@@ -78,6 +82,6 @@ public class ToggleableItemBase extends Item{
         }else{
             tooltip.add("Activate for " + this.LevelCost + " levels (Shift-Right Click)");
         }
-        hasEffect(stack); //Update enchant effet
+        hasEffect(stack); //Update enchant effect
     }
 }
