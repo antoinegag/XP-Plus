@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/XP-Plus.iml" filepath="$PROJECT_DIR$/XP-Plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/XP-Plus_api.iml" filepath="$PROJECT_DIR$/.idea/modules/XP-Plus_api.iml" group="XP-Plus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/XP-Plus_main.iml" filepath="$PROJECT_DIR$/.idea/modules/XP-Plus_main.iml" group="XP-Plus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/XP-Plus_test.iml" filepath="$PROJECT_DIR$/.idea/modules/XP-Plus_test.iml" group="XP-Plus" />
+    </modules>
+  </component>
+</project>
