@@ -1,10 +1,9 @@
-package me.poke.experienceplus.items.emblem;
+package me.poke.experienceplus.emblem;
 
-import me.poke.experienceplus.items.ItemEmblem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class EmblemHealing extends ItemEmblem implements IEmblem {
+public class EmblemHealing extends ItemEmblem {
 
     private final int cost;
     private final float health;

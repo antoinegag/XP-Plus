@@ -1,4 +1,4 @@
-package me.poke.experienceplus.items;
+package me.poke.experienceplus.crystal;
 
 import me.poke.experienceplus.ExperiencePlus;
 import net.minecraft.client.resources.I18n;

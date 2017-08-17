@@ -1,9 +1,9 @@
 package me.poke.experienceplus;
 
-import me.poke.experienceplus.items.ItemCrystal;
-import me.poke.experienceplus.items.emblem.*;
-import me.poke.experienceplus.items.emblem.EmblemTime.TimeStage;
-import me.poke.experienceplus.items.emblem.EmblemWeather.WeatherType;
+import me.poke.experienceplus.crystal.ItemCrystal;
+import me.poke.experienceplus.emblem.*;
+import me.poke.experienceplus.emblem.EmblemTime.TimeStage;
+import me.poke.experienceplus.emblem.EmblemWeather.WeatherType;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;

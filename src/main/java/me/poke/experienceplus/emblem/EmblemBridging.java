@@ -1,6 +1,5 @@
-package me.poke.experienceplus.items.emblem;
+package me.poke.experienceplus.emblem;
 
-import me.poke.experienceplus.items.ItemEmblem;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
@@ -17,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class EmblemBridging extends ItemEmblem implements IEmblem {
+public class EmblemBridging extends ItemEmblem {
 
     private final BlockPos.MutableBlockPos currentPos = new BlockPos.MutableBlockPos();
     private final IBlockState material = Blocks.COBBLESTONE.getDefaultState();
@@ -47,7 +46,7 @@ public class EmblemBridging extends ItemEmblem implements IEmblem {
 
     @Override @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
-        int uses = (stack.getMaxDamage() + 1) - stack.getMetadata();
+        int uses = (stack.getMaxDamage() + 1) - stack.getItemDamage();
         tooltip.add(I18n.format("tooltip.experienceplus.remaining_uses", uses));
         super.addInformation(stack, world, tooltip, flag);
     }
@@ -73,9 +72,9 @@ public class EmblemBridging extends ItemEmblem implements IEmblem {
             }
         }
 
-        if (hasPlacedBlocks && player.world.isRemote) {
+        if (hasPlacedBlocks) {
             SoundType soundtype = material.getBlock().getSoundType(material, player.world, currentPos, player);
-            player.world.playSound(player, currentPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS,
+            player.world.playSound(null, currentPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS,
                     (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
         }
 

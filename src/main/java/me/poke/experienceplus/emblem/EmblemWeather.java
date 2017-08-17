@@ -1,11 +1,10 @@
-package me.poke.experienceplus.items.emblem;
+package me.poke.experienceplus.emblem;
 
-import me.poke.experienceplus.items.ItemEmblem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.WorldInfo;
 
-public class EmblemWeather extends ItemEmblem implements IEmblem {
+public class EmblemWeather extends ItemEmblem {
 
     private final int cost;
     private final WeatherType weather;

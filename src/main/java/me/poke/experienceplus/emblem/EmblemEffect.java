@@ -1,6 +1,5 @@
-package me.poke.experienceplus.items.emblem;
+package me.poke.experienceplus.emblem;
 
-import me.poke.experienceplus.items.ItemEmblem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,7 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class EmblemEffect extends ItemEmblem implements IEmblem {
+public class EmblemEffect extends ItemEmblem {
 
     private final int cost;
     private final Potion potion;

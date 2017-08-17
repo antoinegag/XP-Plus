@@ -2,12 +2,14 @@ package me.poke.experienceplus;
 
 import com.google.common.base.Equivalence;
 import com.google.common.base.Equivalence.Wrapper;
-import me.poke.experienceplus.items.emblem.IEmblem;
+import me.poke.experienceplus.emblem.ItemEmblem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
+import net.minecraftforge.fml.relauncher.Side;
 
 import javax.annotation.Nonnull;
 
@@ -35,11 +37,14 @@ public class EmblemTickManager {
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        if (event.phase != Phase.END || event.side != Side.SERVER) {
+            return;
+        }
 
         NonNullList<Wrapper<ItemStack>> cache = NonNullList.create();
 
         for (ItemStack stack : event.player.inventory.mainInventory) {
-            if (stack.getItem() instanceof IEmblem) {
+            if (stack.getItem() instanceof ItemEmblem) {
                 Wrapper<ItemStack> target = STACK_EQUIVALENCE.wrap(stack);
                 if (!cache.contains(target)) {
                     cache.add(target);
@@ -48,8 +53,8 @@ public class EmblemTickManager {
         }
 
         for (Wrapper<ItemStack> stack : cache) {
-            ItemStack emblem = stack.get();
-            ((IEmblem) emblem.getItem()).onEmblemTick(emblem, event.player);
+            ItemEmblem emblem = (ItemEmblem) stack.get().getItem();
+            emblem.onEmblemTick(stack.get(), event.player);
         }
 
     }

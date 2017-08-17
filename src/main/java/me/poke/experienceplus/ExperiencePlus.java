@@ -1,5 +1,6 @@
 package me.poke.experienceplus;
 
+import me.poke.experienceplus.RegistryManager.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +22,7 @@ public class ExperiencePlus {
     public static final CreativeTabs CTAB = new CreativeTabs(ExperiencePlus.MOD_ID) {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(RegistryManager.ModItems.CRYSTAL_ADVANCED.get());
+            return new ItemStack(ModItems.CRYSTAL_ADVANCED.get());
         }
     };
 
