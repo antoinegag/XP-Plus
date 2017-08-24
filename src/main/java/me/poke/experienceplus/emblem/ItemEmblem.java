@@ -1,6 +1,7 @@
 package me.poke.experienceplus.emblem;
 
 import me.poke.experienceplus.ExperiencePlus;
+import me.poke.experienceplus.util.ExpLevelHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -137,9 +138,10 @@ public abstract class ItemEmblem extends Item {
     }
 
     private boolean tryActivateEmblem(World world, EntityPlayer player, EnumHand hand) {
-        if (player.experienceLevel >= getLevelCost()) {
+        int expCost = ExpLevelHelper.getExperienceForLevel(getLevelCost());
+        if (ExpLevelHelper.getPlayerExp(player) >= expCost) {
             if (onUseEmblem(world, player)) {
-                player.experienceLevel -= getLevelCost();
+                ExpLevelHelper.removePlayerExp(player, expCost);
                 playActivationSound(world, player);
                 createActivationAura(world, player);
                 if (getEmblemType().equals(EmblemType.MANUAL)) {
