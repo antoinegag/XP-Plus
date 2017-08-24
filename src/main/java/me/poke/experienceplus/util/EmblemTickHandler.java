@@ -11,21 +11,18 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-import javax.annotation.Nonnull;
-
-@SuppressWarnings("ConstantConditions")
 @Mod.EventBusSubscriber(modid = ExperiencePlus.MOD_ID)
 public class EmblemTickHandler {
 
     private static final Equivalence<ItemStack> STACK_EQUIVALENCE = new Equivalence<ItemStack>() {
 
         @Override
-        protected boolean doEquivalent(@Nonnull ItemStack a, @Nonnull ItemStack b) {
+        protected boolean doEquivalent(ItemStack a, ItemStack b) {
             return ItemStack.areItemsEqualIgnoreDurability(a, b);
         }
 
         @Override
-        protected int doHash(@Nonnull ItemStack stack) {
+        protected int doHash(ItemStack stack) {
             int result = stack.getItem().getRegistryName().hashCode();
             result = 31 * result + stack.getMaxDamage();
             result = 31 * result + (stack.hasTagCompound() ?

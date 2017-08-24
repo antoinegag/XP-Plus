@@ -50,9 +50,7 @@ public class EmblemEffect extends ItemEmblem {
 
     @Override
     public void onEmblemTick(ItemStack stack, EntityPlayer player) {
-        if (player.world.isRemote || !isEmblemEnabled(stack)) return;
-
-        if (player.ticksExisted % 20 == 0) {
+        if (isEmblemEnabled(stack) && !player.world.isRemote && player.ticksExisted % 20 == 0) {
             player.addPotionEffect(new PotionEffect(potion, 80, amplifier, true, false));
             stack.damageItem(1, player);
         }

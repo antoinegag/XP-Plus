@@ -17,11 +17,12 @@ public class EmblemHealing extends ItemEmblem {
 
     @Override
     public boolean onUseEmblem(World world, EntityPlayer player) {
-        if (player.shouldHeal()) {
-            player.heal(health);
-            player.getCooldownTracker().setCooldown(this, 600);
-            return true;
-        } return false;
+        if (!player.shouldHeal()) {
+            return false;
+        }
+        player.heal(health);
+        player.getCooldownTracker().setCooldown(this, 600);
+        return true;
     }
 
     @Override

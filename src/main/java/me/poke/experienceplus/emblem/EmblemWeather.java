@@ -33,16 +33,11 @@ public class EmblemWeather extends ItemEmblem {
             switch (weather) {
                 case CLEAR:
                     clear = 24000;
-                    rain = 0;
-                    thunder = 0;
                     break;
                 case RAIN:
-                    clear = 0;
                     rain = 24000;
-                    thunder = 0;
                     break;
                 case THUNDER:
-                    clear = 0;
                     rain = 24000;
                     thunder = 24000;
                     break;

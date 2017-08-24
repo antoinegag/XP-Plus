@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "experienceplus:items/crystal_basic"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "experienceplus:items/crystal_basic"
+  }
 }

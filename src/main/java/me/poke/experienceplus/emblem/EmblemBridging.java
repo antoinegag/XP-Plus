@@ -18,8 +18,8 @@ import java.util.List;
 
 public class EmblemBridging extends ItemEmblem {
 
-    private final BlockPos.MutableBlockPos currentPos = new BlockPos.MutableBlockPos();
-    private final IBlockState material = Blocks.COBBLESTONE.getDefaultState();
+    private static final BlockPos.MutableBlockPos POS = new BlockPos.MutableBlockPos();
+    private static final IBlockState MATERIAL = Blocks.COBBLESTONE.getDefaultState();
 
     private final int cost;
 
@@ -55,26 +55,25 @@ public class EmblemBridging extends ItemEmblem {
     public void onEmblemTick(ItemStack stack, EntityPlayer player) {
         if (!isEmblemEnabled(stack) || player.isRiding()) return;
 
-        currentPos.setPos(player.posX, player.posY - 1, player.posZ);
-        BlockPos min = currentPos.subtract(new Vec3i(1, 0, 1));
-        BlockPos max = currentPos.add(new Vec3i(1, 0, 1));
-        Iterable<BlockPos.MutableBlockPos> iterator = BlockPos.getAllInBoxMutable(min, max);
+        POS.setPos(player.posX, player.posY - 1, player.posZ);
+        BlockPos min = POS.subtract(new Vec3i(1, 0, 1));
+        BlockPos max = POS.add(new Vec3i(1, 0, 1));
         boolean hasPlacedBlocks = false;
 
-        for (BlockPos.MutableBlockPos target : iterator) {
+        for (BlockPos.MutableBlockPos target : BlockPos.getAllInBoxMutable(min, max)) {
             IBlockState stateAt = player.world.getBlockState(target);
             if (stateAt.getBlock().isReplaceable(player.world, target)) {
                 hasPlacedBlocks = true;
                 if (!player.world.isRemote) {
-                    player.world.setBlockState(target, material);
+                    player.world.setBlockState(target, MATERIAL);
                     stack.damageItem(1, player);
                 }
             }
         }
 
         if (hasPlacedBlocks) {
-            SoundType soundtype = material.getBlock().getSoundType(material, player.world, currentPos, player);
-            player.world.playSound(null, currentPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS,
+            SoundType soundtype = MATERIAL.getBlock().getSoundType(MATERIAL, player.world, POS, player);
+            player.world.playSound(null, POS, soundtype.getPlaceSound(), SoundCategory.BLOCKS,
                     (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
         }
 

@@ -5,12 +5,12 @@ import me.poke.experienceplus.emblem.*;
 import me.poke.experienceplus.emblem.EmblemTime.TimeStage;
 import me.poke.experienceplus.emblem.EmblemWeather.WeatherType;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.init.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.potion.PotionUtils;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -20,7 +20,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@SuppressWarnings("unused")
 public class RegistryManager {
 
     public enum ModItems {
@@ -44,12 +43,17 @@ public class RegistryManager {
         EMBLEM_JUMP(new EmblemEffect("emblem_jump", 30, MobEffects.JUMP_BOOST, 0)),
         EMBLEM_RESISTANCE(new EmblemEffect("emblem_resistance", 30, MobEffects.RESISTANCE, 0)),
         EMBLEM_SPEED(new EmblemEffect("emblem_speed", 30, MobEffects.SPEED, 0)),
-        EMBLEM_STRENGTH(new EmblemEffect("emblem_strength", 30, MobEffects.STRENGTH, 0)),
-        ;
+        EMBLEM_STRENGTH(new EmblemEffect("emblem_strength", 30, MobEffects.STRENGTH, 0)),;
 
         private final Item item;
-        ModItems(Item item) { this.item = item; }
-        public Item get() { return item; }
+
+        ModItems(Item item) {
+            this.item = item;
+        }
+
+        public Item get() {
+            return item;
+        }
     }
 
     @Mod.EventBusSubscriber(modid = ExperiencePlus.MOD_ID)
@@ -75,7 +79,6 @@ public class RegistryManager {
             }
         }
 
-        @SuppressWarnings("ConstantConditions")
         private static void registerItemModel(Item item) {
             ModelResourceLocation mrl = new ModelResourceLocation(item.getRegistryName(), "inventory");
             ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
@@ -95,21 +98,21 @@ public class RegistryManager {
             registerAdvancedRecipe(ModItems.EMBLEM_DAY.get(), Items.BLAZE_POWDER, Blocks.GLOWSTONE);
             registerAdvancedRecipe(ModItems.EMBLEM_NIGHT.get(), Items.ENDER_PEARL, Blocks.END_STONE);
             // Weather Emblems
-            registerBasicRecipe(ModItems.EMBLEM_CLEAR.get(), Blocks.YELLOW_FLOWER, Blocks.GLOWSTONE);
-            registerBasicRecipe(ModItems.EMBLEM_RAIN.get(), Items.WATER_BUCKET, Items.WATER_BUCKET);
-            registerBasicRecipe(ModItems.EMBLEM_THUNDER.get(), Blocks.GLOWSTONE, Items.WATER_BUCKET);
+            registerBasicRecipe(ModItems.EMBLEM_CLEAR.get(), new ItemStack(Blocks.DOUBLE_PLANT, 1, 0), Blocks.GRASS);
+            registerBasicRecipe(ModItems.EMBLEM_RAIN.get(), new ItemStack(Blocks.SPONGE, 1, 1), Items.WATER_BUCKET);
+            registerBasicRecipe(ModItems.EMBLEM_THUNDER.get(), Blocks.SOUL_SAND, Blocks.END_ROD);
             // Effect Emblems
             registerBasicRecipe(ModItems.EMBLEM_GLOWING.get(), Blocks.REDSTONE_LAMP, Blocks.REDSTONE_BLOCK);
-            registerBasicRecipe(ModItems.EMBLEM_HASTE.get(), Items.SUGAR, Blocks.REDSTONE_BLOCK);
+            registerBasicRecipe(ModItems.EMBLEM_HASTE.get(), Items.SUGAR, withEnchantment(new ItemStack(Items.DIAMOND_PICKAXE), Enchantments.EFFICIENCY, 4));
             registerAdvancedRecipe(ModItems.EMBLEM_HEALING.get(), Items.GOLDEN_APPLE, Items.GOLDEN_APPLE);
             registerBasicRecipe(ModItems.EMBLEM_JUMP.get(), Items.RABBIT, Blocks.SLIME_BLOCK);
             registerAdvancedRecipe(ModItems.EMBLEM_RESISTANCE.get(), Blocks.IRON_BLOCK, Blocks.IRON_BLOCK);
-            registerBasicRecipe(ModItems.EMBLEM_SPEED.get(), Items.SUGAR, Items.CHORUS_FRUIT);
+            registerBasicRecipe(ModItems.EMBLEM_SPEED.get(), Items.SUGAR, PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.SWIFTNESS));
             registerAdvancedRecipe(ModItems.EMBLEM_STRENGTH.get(), Items.BLAZE_POWDER, Items.BLAZE_ROD);
 
         }
 
-        public static void registerCrystalRecipe(Item crystal, Object core) {
+        private static void registerCrystalRecipe(Item crystal, Object core) {
             GameRegistry.addShapedRecipe(
                     crystal.getRegistryName(), null, new ItemStack(crystal),
                     " O ", "OCO", " O ",
@@ -117,9 +120,9 @@ public class RegistryManager {
             );
         }
 
-        public static void registerBasicRecipe(Item item, Object top, Object bottom) {
+        private static void registerBasicRecipe(Item emblem, Object top, Object bottom) {
             GameRegistry.addShapedRecipe(
-                    item.getRegistryName(), null, new ItemStack(item),
+                    emblem.getRegistryName(), null, new ItemStack(emblem),
                     "IAI", "ICI", "IBI",
                     'I', Items.GOLD_INGOT,
                     'A', top, 'B', bottom,
@@ -127,14 +130,19 @@ public class RegistryManager {
             );
         }
 
-        protected static void registerAdvancedRecipe(Item item, Object top, Object bottom) {
+        private static void registerAdvancedRecipe(Item emblem, Object top, Object bottom) {
             GameRegistry.addShapedRecipe(
-                    item.getRegistryName(), null, new ItemStack(item),
+                    emblem.getRegistryName(), null, new ItemStack(emblem),
                     "IAI", "ICI", "IBI",
                     'I', Items.DIAMOND,
                     'A', top, 'B', bottom,
                     'C', ModItems.CRYSTAL_ADVANCED.get()
             );
+        }
+
+        private static ItemStack withEnchantment(ItemStack stack, Enchantment enchantment, int level) {
+            stack.addEnchantment(enchantment, level);
+            return stack;
         }
 
     }

@@ -33,13 +33,11 @@ public abstract class ItemEmblem extends Item {
 
     @Override
     public void onUpdate(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected) {
-        if (!stack.hasTagCompound()) {
-            if (getEmblemType().equals(EmblemType.TOGGLEABLE)) {
-                NBTTagCompound tag = new NBTTagCompound();
-                tag.setBoolean("activated", false);
-                tag.setBoolean("enabled", false);
-                stack.setTagCompound(tag);
-            }
+        if (!stack.hasTagCompound() && getEmblemType().equals(EmblemType.TOGGLEABLE)) {
+            NBTTagCompound tag = new NBTTagCompound();
+            tag.setBoolean("activated", false);
+            tag.setBoolean("enabled", false);
+            stack.setTagCompound(tag);
         }
     }
 
@@ -47,12 +45,12 @@ public abstract class ItemEmblem extends Item {
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         if (player.isSneaking()) {
             ActionResult<ItemStack> success = new ActionResult<>(EnumActionResult.SUCCESS, player.getHeldItem(hand));
-            if (toggleEmblemState(world, player, hand)) {
-                return success;
-            } else {
+            if (!toggleEmblemState(world, player, hand)) {
                 if (tryActivateEmblem(world, player, hand)) {
                     return success;
                 }
+            } else {
+                return success;
             }
         }
         return super.onItemRightClick(world, player, hand);
@@ -114,25 +112,27 @@ public abstract class ItemEmblem extends Item {
     }
 
     private boolean toggleEmblemState(World world, EntityPlayer player, EnumHand hand) {
-        if (!getEmblemType().equals(EmblemType.TOGGLEABLE)) return false;
-        ItemStack stack = player.getHeldItem(hand);
-        if (stack.hasTagCompound() && stack.getTagCompound() != null) {
-            NBTTagCompound nbt = stack.getTagCompound();
-            if (!nbt.getBoolean("activated")) {
-                if (tryActivateEmblem(world, player, hand)) {
-                    nbt.setBoolean("activated", true);
+        if (getEmblemType().equals(EmblemType.TOGGLEABLE)) {
+            ItemStack stack = player.getHeldItem(hand);
+            if (stack.hasTagCompound() && stack.getTagCompound() != null) {
+                NBTTagCompound nbt = stack.getTagCompound();
+                if (nbt.getBoolean("activated")) {
+                    boolean state = nbt.getBoolean("enabled");
+                    world.playSound(null, player.posX, player.posY, player.posZ,
+                            SoundEvents.BLOCK_LEVER_CLICK, SoundCategory.PLAYERS,
+                            0.5F, (state ? 0.1F : 0.8F));
+                    nbt.setBoolean("enabled", !state);
                 } else {
-                    String key = "message.experienceplus.no_experience";
-                    player.sendStatusMessage(new TextComponentTranslation(key), true);
+                    if (tryActivateEmblem(world, player, hand)) {
+                        nbt.setBoolean("activated", true);
+                    } else {
+                        player.sendStatusMessage(new TextComponentTranslation(
+                                "message.experienceplus.no_experience"), true);
+                    }
                 }
-            } else {
-                boolean state = nbt.getBoolean("enabled");
-                world.playSound(null, player.posX, player.posY, player.posZ,
-                        SoundEvents.BLOCK_LEVER_CLICK, SoundCategory.PLAYERS,
-                        0.5F, (state ? 0.1F : 0.8F));
-                nbt.setBoolean("enabled", !state);
+                return true;
             }
-            return true;
+            return false;
         }
         return false;
     }
@@ -169,8 +169,7 @@ public abstract class ItemEmblem extends Item {
         }
     }
 
-    private static void spawnAreaParticle(
-            World world, EnumParticleTypes particle, Random random, double x, double y, double z) {
+    private static void spawnAreaParticle(World world, EnumParticleTypes particle, Random random, double x, double y, double z) {
         world.spawnParticle(particle, x - 0.5, y, z, -(random.nextFloat() % 2), 0, 0);
         world.spawnParticle(particle, x, y, z - 0.5, 0, 0, -(random.nextFloat() % 2));
         world.spawnParticle(particle, x - 0.5, y, z - 0.5, -(random.nextFloat() % 2), 0, -(random.nextFloat() % 2));
